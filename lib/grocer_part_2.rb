@@ -7,12 +7,13 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   if coupons
     coupons.each do |coupon_info|
-    if coupon_info[:item] == item_info[:item]
-      item_info[:count] = item_info[:count] - coupon_info[:num]
+      var = find_item_by_name_in_collection(coupon_info[:item], cart)
+    if coupon_info[:item] == var[:item]
+      var[:count] = var[:count] - coupon_info[:num]
               cart << {
               :item => coupon_info[:item].concat(" W/ COUPON"),
               :price => coupon_info[:cost]/coupon_info[:num],
-              :clearance => item_info[:clearance], 
+              :clearance => var[:clearance], 
               :count => coupon_info[:num]
               } 
     end
