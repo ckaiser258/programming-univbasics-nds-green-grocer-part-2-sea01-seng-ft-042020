@@ -41,10 +41,9 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
+  binding.pry
   consolidate_cart(cart)
-  if coupons
   apply_coupons(cart, coupons)
-end
   apply_clearance(cart)
   total = 0
   cart.each do |item_info|
