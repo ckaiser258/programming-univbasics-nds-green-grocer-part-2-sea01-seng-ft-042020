@@ -11,7 +11,7 @@ def apply_coupons(cart, coupons)
     if coupon_info[:item] == var[:item]
       var[:count] = var[:count] - coupon_info[:num]
               cart << {
-              :item => coupon_info[:item].concat(" W/ COUPON"),
+              :item => coupon_info[:item].concat(" W/COUPON"),
               :price => coupon_info[:cost]/coupon_info[:num],
               :clearance => var[:clearance], 
               :count => coupon_info[:num]
