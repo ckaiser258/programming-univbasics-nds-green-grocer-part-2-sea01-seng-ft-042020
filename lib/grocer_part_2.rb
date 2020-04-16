@@ -16,7 +16,6 @@ def apply_coupons(cart, coupons)
               :clearance => var[:clearance], 
               :count => coupon_info[:num]
               } 
-    end
     # if item_info[:count] < 1
     #   cart.delete(item_info)
     #end
