@@ -2,9 +2,6 @@ require_relative './part_1_solution.rb'
 require "pry"
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
   if coupons
     coupons.each do |coupon_info|
       var = find_item_by_name_in_collection(coupon_info[:item], cart)
@@ -16,9 +13,6 @@ def apply_coupons(cart, coupons)
               :clearance => var[:clearance], 
               :count => coupon_info[:num]
               } 
-    # if item_info[:count] < 1
-    #   cart.delete(item_info)
-    #end
   end
   end
 end
@@ -31,7 +25,7 @@ def apply_clearance(cart)
   # REMEMBER: This method **should** update cart
   cart.each do |item_info|
     if item_info[:clearance] == true
-      (item_info[:price] - (item_info[:price] * 0.2)).round(2)
+      item_info[:price] - (item_info[:price] * 0.2).round(2)
     end
   end
   cart
